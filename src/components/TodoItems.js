@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 //This is a "child" component of ViewTodos
 
 class Todoitems extends React.Component {
-  constructor(props);
-  super(props);
-}
+  constructor(props) {
+    super(props);
+  }
 
-render() {
+  render() {
 
-  console.log(this.props.Todos)
-  return (
-    <div>
-      <h1>Todo Items.</h1>
-    </div>
-  )
-}
+    console.log(this.props.Todos)
+    return (
+      <div>
+        <h1>Todo Items.</h1>
+      </div>
+    );
+  }
+
 }
 
 export default Todoitem;
