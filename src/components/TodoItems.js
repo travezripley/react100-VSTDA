@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 //This is a "child" component of ViewTodos
 
 const childTitle = "Todo Items";
