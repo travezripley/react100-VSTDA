@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-//This is a "child" component of ViewTodos
 
+//This is a "child" component of ViewTodos
 
 export class Todoitems extends React.Component {
   constructor(props) {
     super(props);
   }
-
+  
   render() {
     return (
 
@@ -29,6 +29,7 @@ export class Todoitems extends React.Component {
                   <span
                     className='btn btn-link float-right delete-todo'
                     onClick={e => { this.props.handleDeleteClick(todo.id) }}>
+                    
                     <span
                       className="glyphicon glyphicon-trash float-right delete-todo"></span>
                   </span>
@@ -36,29 +37,35 @@ export class Todoitems extends React.Component {
                   <span
                     className='btn btn-link float-right edit-todo'
                     onClick={e => {this.props.handleEditClick(todo.id)}}>
-                    <span
-                      className="glyphicon glyphicon-edit float-right delete-todo"></span>
+                    
+                  <span
+                    className="glyphicon glyphicon-edit float-right delete-todo"></span>
                   </span> </li>)
 
           }else{
+            
             return(
               
               <li key={i} className={this.priorityColorAndIsCompleted(todo.priority)}>
                
               <div className="form-group">
-                  <label name="todo-text-label">Descriptions</label>
+                  
+                <label name="todo-text-label">Descriptions</label>
+                    
                     <textarea
-                      name= "todo-text"
-                      type= "text"
-                      rows= "3"
+                      name="todo-text"
+                      type="text"
+                      rows="3"
                       defaultValue={todo.text}
                       className="form-control input-md update-todo-text"
                       onChange={this.props.updatingEditingTodoText}>
                     </textarea>
-                </div>
+                
+                    </div>
                 
                   <div className="form-group">
-                    <label name="todo-text-label">Priority</label>
+                    
+                  <label name="todo-text-label">Priority</label>
                     <select
                       name="term"
                       className="form-control input-md update-todo-priority"
@@ -71,12 +78,16 @@ export class Todoitems extends React.Component {
                       <option value="2">Medium Priority</option>
                       <option value="3">High Priority</option>
                     </select>
+
                   </div>
-                <button
-                  name="button"
-                  className="btn btn-success float-right update-todo"
-                  onClick={this.props.handleEditSaveClick}></button>
-                </li>
+
+                  <button
+                    name="button"
+                    className="btn btn-success float-right update-todo"
+                    onClick={this.props.handleEditSaveClick}>
+                  </button>
+                
+                  </li>
                 )
               }
             })
