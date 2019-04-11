@@ -18,7 +18,6 @@ export class Todoitems extends React.Component {
             return (
 
               <li key={i} className={this.priorityColorAndIsCompleted(todo.priority, todo.isCompleted)}>
-
                 <input
                   className="form-check-input position-static"
                   type="checkbox"
