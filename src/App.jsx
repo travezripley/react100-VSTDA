@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { AddNewTodo } from './AddNewTodo';
 import { ViewTodos } from './ViewTodos';
-import { EmptyListGreeting } from './EmptyListGreeting';
+//import { EmptyListGreeting } from './EmptyListGreeting';
 
 //this is the Top Level Component - holds state
 
 class App extends Component {
   constructor(props) {
     super(props);
-
 
     const todos = [
       {
@@ -28,7 +27,7 @@ class App extends Component {
         id: 2,
         isCompleted: false,
         addingText: '',
-        addingText: '0'
+        addingPriority: '0'
       },
 
       {
@@ -38,7 +37,7 @@ class App extends Component {
         id: 3,
         isCompleted: false,
         addingText: '',
-        addingText: '0'
+        addingPriority: '0'
       }
 
 
