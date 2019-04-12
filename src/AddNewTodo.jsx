@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react';
 //"child" of App
 export class AddNewTodo extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ export class AddNewTodo extends React.Component {
                 size="1"
                 type="number"
                 value={this.props.addingPriority}
-                onChange={this.props.updateCreateTodoPriority}>
+                onChange={this.props.updateTodoPriority}>
                 <option value="0">Select a Priority</option>
                 <option value="1">Low Priority</option>
                 <option value="2">Medium Priority</option>

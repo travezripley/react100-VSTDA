@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react';
 import { TodoItems } from './TodoItems';
 import { EmptyListGreeting } from './EmptyListGreeting';
 
@@ -29,7 +29,7 @@ export class ViewTodos extends React.Component {
 
       <div className='col-md-8 ' >
         <div className=' panel panel-default ' >
-          <div className=' panel-heading ' >View Todos </div>
+          <div className=' panel-heading ' >View Todos</div>
           <div className=' panel-body ' >
 
             {/* This function below - Displays the "EmptyListGreeting or Todo List*/}

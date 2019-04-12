@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { AddNewTodo } from './AddNewTodo';
+import { ViewTodos } from './ViewTodos';
 import { EmptyListGreeting } from './EmptyListGreeting';
 
 //this is the Top Level Component - holds state
@@ -90,9 +91,7 @@ class App extends Component {
       let todos = [...this.state.todos];
 
       todos.push(todo);
-      this.setState({
-        todos
-      });
+      this.setState({ todos });
 
       //resets "text" and "priority" fields to "default" after user submits info
 
@@ -112,7 +111,7 @@ class App extends Component {
     if (this.state.editEnabled === true) {
       return alert("Hey dawg! You can only edit one TODO at a time!?!");
     }
-    for (vari in this.state.todos) {
+    for (var i in this.state.todos) {
       if (this.state.todos[i].id == id) {
         var editTodo = this.state.todos[i]
         this.editIndexNum = i;
@@ -126,7 +125,7 @@ class App extends Component {
       id: editTodo.id,
       isCompleted: editTodo.isCompleted
     }
-    let todos = [this.state.todos];
+    let todos = [...this.state.todos];
 
     todos.splice(this.editIndexNum, 1, todo);
     this.setState({
@@ -197,7 +196,9 @@ class App extends Component {
       this.setState({ todos });
     }
   }
+
   //The method below is for changing "isCompleted" state upon change in "checkbox" status
+
   handleFormCheckboxInput(id) {
     for (var i in this.state.todos) {
       if (this.state.todos[i].id == id) {
@@ -219,15 +220,44 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
+
+      <div className='container'>
 
         <div className='page-header'>
           <h1 className='text-white'> Very Simple Todo App </h1>
           <p className='lead text-white'>Track all the Things</p>
         </div>
+
+
+        <div className="row">
+
+          <AddNewTodo
+            priority={this.state.priority}
+            addingText={this.state.addingText}
+            addingPriority={this.state.addingPriority}
+            handleCreate={this.handleCreate}
+            updateCreateTodoText={this.updateCreateTodoText}
+            updateTodoPriority={this.updateEditingPriority} />
+
+          <ViewTodos
+            todos={this.state.todos}
+            handleEditClick={this.handleEditClick}
+            handleDeleteClick={this.handleDeleteClick}
+            updateEditingTodoText={this.updateCreateTodoText}
+            updateEditingPriority={this.updateEditingPriority}
+            handleEditingSaveClick={this.handleEditingSaveClick}
+            handleDeleteClick={this.handleDeleteClick}
+            handleFormCheckboxInput={this.handleFormCheckboxInput} />
+
+          {/* end row div */}
+
+        </div>
+
+        {/* end container div */}
+
       </div>
     );
   }
+}
 
-
-  export default App;
+export default App;

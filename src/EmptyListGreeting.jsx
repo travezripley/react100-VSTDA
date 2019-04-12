@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { TodoItems } from './TodoItems';
 
 export class EmptyListGreeting extends React.Component {

@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react';
 
 //This is a "child" component of ViewTodos
 
-export class Todoitems extends React.Component {
+export class TodoItems extends React.Component {
   constructor(props) {
     super(props);
   }
