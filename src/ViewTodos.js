@@ -13,7 +13,15 @@ export class ViewTodos extends React.Component {
     if (todoslength == 0) {
       return <EmptyListGreeting />
     } else {
-      return <TodoItems todos={this.props.todos} />
+      return <TodoItems todos={this.props.todos}
+        handleEditClick={this.props.handleEditClick}
+        handleDeleteClick={this.props.handleDeleteClick}
+        updateEditingTodoText={this.props.updateEditingTodoText}
+        updateEditingPriority={this.props.updateEditingPriority}
+        updateEditingSaveClick={this.props.updateEditingSaveClick}
+        updateDeleteClick={this.props.updateDeleteClick}
+        updateFormCheckboxInput={this.props.updateFormCheckboxInput} />
+
     }
   }
   render() {
